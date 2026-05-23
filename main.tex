@@ -1,0 +1,274 @@
+%-------------------------
+% Resume in Latex
+% Author : Jake Gutierrez
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+% Custom modifications (geometry/layout implementation, PDF compatibility, and design): Ioana-Alexandra Petrache (https://github.com/pialexandraa/strata-tech-resume)
+%------------------------
+
+\documentclass[letterpaper,10.5pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+% Ensuring the generated PDF is machine readable and ATS parsable
+\usepackage{cmap} % this should fix the character mapping for various, as the package forces the pdfLaTeX compiler to generate a hardcoded dictionary and embed it directly into the PDF.
+\usepackage{iftex}
+\ifpdftex
+    \input{glyphtounicode} % Loads the glyph-to-unicode dictionary
+    \pdfgentounicode=1
+\fi
+
+%----------FONT OPTIONS----------
+\usepackage[default, light]{roboto}
+\usepackage[T1]{fontenc}
+%--------------------------------
+
+% Adjust margins, custom:
+\usepackage[left=0.5in, top=0.4in, right=0.5in, bottom=0.8in]{geometry}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\definecolor{Minty}{RGB}{12, 130, 97}       % Signature, custom Green
+\definecolor{darktext}{RGB}{51, 51, 51}     % For Name and Section Headers
+\definecolor{graytext}{RGB}{93, 93, 93}     % For the bullet points custom look
+\definecolor{lighttext}{RGB}{153, 153, 153} % For dates and locations (the default, light gray)
+
+% Sections formatting
+\titleformat{\section}{
+  \nopagebreak\raggedright\Large\bfseries\color{darktext}
+}{}{0em}{}[\color{darktext}\titlerule] % This makes the text default to dark grey in the section headers
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {\color{graytext}#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+  \item\small{
+    {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{5pt}\item % The command to globally control the spacing between each individual job
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\large\color{darktext}#1} & \textit{\small\color{Minty}#4} \\
+      {\small\color{graytext}#3} & \textit{\small\color{graytext}#2} \\
+    \end{tabular*}\vspace{-1pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small\color{darktext}#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%%%  RESUME START %%%%%%%%
+
+
+\begin{document}
+\color{darktext} % This makes the text default to dark grey for the whole document
+
+%----------HEADING----------
+\begin{center}
+    {\Huge {\color{graytext}Michelle Sofia-}\textbf{\color{Minty}Gutierrez}} \\ \vspace{5pt}
+    {\textcolor{darktext} {Full-Stack Developer | Software Architecture}} \\ \vspace{5pt}
+    {\small{\textcolor{darktext}{Barcelona, Spain}}} \\ \vspace{5pt}
+    \small \raisebox{-0.1\height}\faPhone\ 34 002 000 000 ~ \href{mailto:michelle.s.gutierrez@example.com}{\raisebox{-0.2\height}\faEnvelope\ \underline{michelle.s.gutierrez@example.com}} ~ 
+    \href{https://linkedin.com/in/michelles-gutierrez}{\raisebox{-0.2\height}\faLinkedin\ \underline{linkedin.com/in/michelles-gutierrez}}  ~
+    \href{https://github.com/msg1654utierrez}{\raisebox{-0.2\height}\faGithub\ \underline{github.com/msg1654utierrez}}
+    \vspace{1pt}
+\end{center}
+
+%-------------SUMMARY-------------
+\section{\textcolor{Minty}{Sum}mary}
+\small{\color{graytext}{Senior Full-Stack Developer and Platform Engineer with a focus on building resilient backend services, scalable frontend architectures, and automated CI/CD pipelines. Experienced in bridging the gap between complex client requirements and clean, secure code, while optimizing system performance and engineering smooth development workflows.}}
+
+%-----------EXPERIENCE-----------
+\section{\textcolor{Minty}{Exp}erience}
+  \resumeSubHeadingListStart
+
+\resumeSubheading
+      {Senior Full-Stack Developer}{Jul. 2023 - Present}
+      {Nexus Tech Solutions}{Barcelona, Spain (Hybrid)}
+      \resumeItemListStart
+        \resumeItem{\textbf{\color{darktext}Architecture \& Scaling}: Architected and developed a high-traffic SaaS dashboard using React and TypeScript, successfully scaling the platform to serve over 50,000 monthly active users.}
+        \resumeItem{\textbf{\color{darktext}API Optimization}: Migrated legacy REST APIs to a unified GraphQL endpoint, optimizing database query logic and reducing client-side data fetching time by 40\%.}
+        \resumeItem{\textbf{\color{darktext}Pipeline Automation}: Implemented automated integration and unit testing (Jest/Cypress) within GitHub Actions CI/CD pipelines, increasing code coverage to 85\% and reducing critical production bugs.}
+      \resumeItemListEnd
+      %\vspace{8pt} % Additional line of space, use if needed
+
+    \resumeSubheading
+      {Software Developer (Client Solutions)}{May. 2020 - Feb. 2023}
+      {FinTech Partners UK}{\textcolor{Minty}London, UK}
+      \resumeItemListStart
+        \resumeItem{\textbf{\color{darktext}Customer-Centric Engineering}: Served as the primary technical liaison for enterprise clients, translating complex business requirements into actionable engineering sprints and bespoke software features.}
+        \resumeItem{\textbf{\color{darktext}Platform Integration}: Engineered custom API integrations bridging the core application with legacy client systems, reducing onboarding time for new enterprise accounts by 30\%.}
+        \resumeItem{\textbf{\color{darktext}User Acceptance Testing (UAT)}: Directed live product demonstrations and UAT sessions, utilizing direct customer feedback to refine front-end UI components and workflows.}
+    \resumeItemListEnd
+    %\vspace{8pt} % Additional line of space, use if needed
+
+    \resumeSubheading
+      {Program Coordinator \& Instructor}{May 2019 - Apr. 2020}
+      {Austin Cinematic Arts Center}{\textcolor{Minty}Austin, TX}
+      \resumeItemListStart
+        \resumeItem{\textbf{\color{darktext}Event Logistics \& Operations}: Directed scheduling and logistical operations for community film screenings, theatrical performances, and independent arts festivals.}
+        \resumeItem{\textbf{\color{darktext}Curriculum Development}: Developed and facilitated educational workshops for local residents, focusing on cinematic history, digital storytelling, and media literacy.}
+    \resumeItemListEnd
+    %\vspace{8pt}
+    
+     \resumeSubheading
+      {Web Developer (Contract)}{Sept. 2018 - Apr. 2019}
+      {OptimaWeb Solutions}{\textcolor{Minty}Austin, TX}
+      \resumeItemListStart
+        \resumeItem{\textbf{\color{darktext}Component Development}: Translated UI/UX wireframes into functional, modular React components and managed global state using Redux for a fast-paced EdTech startup.}
+        \resumeItem{\textbf{\color{darktext}Cross-Browser Debugging}: Debugged networking and browser-side execution errors, ensuring uniform layout rendering across legacy and modern browsers.}
+    \resumeItemListEnd
+    %\vspace{8pt} % Additional line of space, use if needed
+
+     \resumeSubheading
+      {Junior Web Developer}{Jul. 2017 - Aug. 2018}
+      {Boston Logic}{\textcolor{Minty}Boston, MA}
+      \resumeItemListStart
+        \resumeItem{\textbf{\color{darktext}Feature Implementation}: Maintained and expanded existing monolithic applications, migrating legacy jQuery interfaces to modern React components.}
+        \resumeItem{\textbf{\color{darktext}QA \& Documentation}: Authored comprehensive technical documentation for internal developer onboarding and wrote unit tests for REST endpoints using Jest.}
+    \resumeItemListEnd
+
+   \resumeSubheading
+      {Software Engineering Intern}{May 2016 - Aug. 2016}
+      {Commonwealth EdTech}{\textcolor{Minty}Boston, MA}
+      \resumeItemListStart
+        \resumeItem{\textbf{\color{darktext}Feature Development}: Assisted in migrating a legacy jQuery student portal to React.js, improving page load speeds by 25\%.}
+        \resumeItem{\textbf{\color{darktext}QA \& Testing}: Wrote comprehensive unit tests using Jest and documented REST API endpoints for the backend engineering team.}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+  %\vspace{-1pt} % Additional line of space, use if needed
+
+% Page 2 controller for the white space at the top of the second page. This control the space !between main categories!
+\newpage
+\vspace*{-13pt} % Adjust if needed
+
+%-----------PROFESSIONAL CREDENTIALS AND MODERN STACK EXPOSURE-----------
+\section{\textcolor{Minty}{Pro}fessional Credentials \& Modern Stack Exposure}
+  \resumeSubHeadingListStart
+    
+    \resumeProjectHeading
+        {\textbf{Backend Engineering \& Service Architecture}}{}
+        \vspace{-10pt}
+        \resumeItemListStart
+            \resumeItem{\textcolor{Minty}{Python}: Production implementation for backend automation \& data pipelines ~ \textbar ~ \textcolor{Minty}{Node.js}: Corporate training \& microservices architecture project ~ \textbar ~ \textcolor{Minty}{Objective-C}: Academic coursework (Boston University) \& legacy mobile support}
+        \resumeItemListEnd
+        \vspace{-4pt} % Additional line of space, use if needed
+
+    \resumeProjectHeading
+        {\textbf{Front-End Systems \& Client Integration}}{}
+        \vspace{-10pt}
+        \resumeItemListStart
+            \resumeItem{{\textcolor{Minty}TypeScript \& JavaScript (ES6+)}: Core stack implementation across enterprise client projects ~ \textbar ~ \textcolor{Minty}{React.js}: Advanced component design \& state management optimization ~ \textbar ~ \textcolor{Minty}{Next.js}: Production deployment for high-traffic web applications}
+        \resumeItemListEnd
+        \vspace{-4pt} % Additional line of space, use if needed
+        
+      \resumeProjectHeading
+        {\textbf{Platform Engineering, Security \& Governance}}{}
+        \vspace{-10pt}
+        \resumeItemListStart
+        \resumeItem{Google Cloud Platform (\textcolor{Minty}{GCP}) \& Cloud Run: Administration \& deployment training ~ \textbar ~ Containerization via \textcolor{Minty}{Docker}: Hands-on pipeline integration ~ \textbar ~ Dedicated training on \textcolor{Minty}{OWASP} secure coding principles (2025) ~ \textbar ~ \textcolor{Minty}{GDPR / ISO 27001}: Compliance framework implementation (2023–2025)}
+        \resumeItemListEnd
+        \vspace{-4pt} % Additional line of space, use if needed
+
+      \resumeProjectHeading
+        {\textbf{Engineering Workflows \& AI Implementation}}{}
+        \vspace{-10pt}
+        \resumeItemListStart
+          \resumeItem{Introduction to \textcolor{Minty}{Artificial Intelligence and Optimization algorithms} with \textcolor{Minty}{Python} (MIT Online, Professional Cert. - In Progress) ~ \textbar ~ \textcolor{Minty}{Generative AI \& Agentic AI}: Model implementation and logic flows (IBM/Red Hat training, 2025–2026) ~ \textbar ~ \textcolor{Minty}{CI/CD}: GitHub Actions automation project ~ \textbar ~ \textcolor{Minty}{Agile Engineering}: GitFlow workflow standardization (Atlassian Cert., 2024)}
+        \resumeItemListEnd
+  \resumeSubHeadingListEnd
+\vspace{-1pt} % Additional line of space, use if needed
+  
+%-----------WRITING & PUBLICATIONS-----------
+\section{\textcolor{Minty}{Wri}ting \& Publications}
+\vspace{4pt}
+
+{\textbf{\color{darktext}Advanced Web Architecture}:} \href{https://example.com}{\color{Minty}GraphQL API Migration} ~ \textbar ~ \href{https://example.com}{\color{Minty}Custom React Hooks}\par
+{\small\color{graytext}Authored architectural deep-dives and technical tutorials for premier engineering outlets including The Modern Stack (UK) and Web Engineering Hub.}
+\vspace{8pt} % Additional line of space, use if needed
+
+{\textbf{\color{darktext}Modern JavaScript \& UI/UX}:} \href{https://example.com}{\color{Minty}The Component Tree (Personal Blog)}\par
+{\small\color{graytext}Authored 50+ articles focused on ES6+ and early React architecture, growing to 15,000 monthly readers before pivoting focus to open-source contributions.}
+\vspace{8pt} % Additional line of space, use if needed
+
+{\textbf{\color{darktext}Human-Computer Interaction (HCI)}:} \href{https://example.com}{\color{Minty}Accessibility First: Screen Readers \& Virtual DOM}\par
+{\small\color{graytext}Co-authored an academic paper evaluating ARIA labels and semantic HTML performance within complex SPAs for the Boston University department symposium.}
+\vspace{4pt} % Additional line of space, use if needed
+
+%-----------EDUCATION---------------
+\section{\textcolor{Minty}{Edu}cation \& Linguistic Competencies}
+\vspace{4pt}
+
+\textbf{\color{darktext}Artificial Intelligence Algorithms for professionals (with Python)}\par
+    {\small\color{graytext}6-month intensive focus on AI, algorithmic logic and neural networks using Python.}
+\vspace{6pt} % Additional line of space, use if needed
+
+\textbf{\color{darktext}Bachelor of Arts in Computer Science | Boston University}\par
+{\small\color{graytext}Minor in Interactive Design. Coursework focus on data structures, algorithmic logic, and web engineering.}
+\vspace{5pt} % Additional line of space, use if needed
+
+\textbf{\color{darktext}Languages}
+\vspace{9pt} 
+\begin{multicols}{2}
+    \begin{itemize}[leftmargin=0.15in, label={\textcolor{graytext}{$\vcenter{\hbox{\tiny$\bullet$}}$}}]
+        \item \small{\color{darktext}\textbf{English}: Native Mastery, Academic Specialization}
+        \item \small{\color{darktext}\textbf{Spanish}: Full Professional Mastery (C2)}
+        \item \small{\color{darktext}\textbf{French}: Operational/Working Proficiency (B1)}
+        \item \small{\color{darktext}\textbf{Latin}: Academic Specialization/Basic Proficiency (A2)}
+    \end{itemize}
+\end{multicols}
+%\vspace{4pt} % % Additional line of space, use if needed
+
+    %-----------HOBBIES & INTERESTS---------------
+    \section{\textcolor{Minty}{Hob}bies \& Interests}
+    {\textcolor{darktext}{\textbf{Cinematic Curation \& Independent Film}:} \color{graytext}Analyzing narrative screenwriting structures and volunteering at independent film festivals.}\par
+    {\textcolor{darktext}{\textbf{Marathon Training \& Long-Distance Running}:} \color{graytext}Endurance sports as a practical discipline for cultivating long-term stamina.}\par
+    {\textcolor{darktext}{\textbf{Reflective Journaling \& Behavioral Psychology}:} \color{graytext}Studying cognitive patterns and utilizing structured writing for personal retrospectives.}
+
+\end{document}

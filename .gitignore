@@ -1,0 +1,14 @@
+# LaTeX standard compiler outputs
+*.aux
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# VS Code clutter
+.vscode/
+
+# OS hidden garbage
+.DS_Store
+Thumbs.db
