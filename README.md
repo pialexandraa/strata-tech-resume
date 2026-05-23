@@ -1,0 +1,9 @@
+![Status: Work in Progress](https://img.shields.io/badge/status-work--in--progress-orange)
+
+* **ATS-Optimized:** Given that today's recruiting is a battle for ATS attention, this resume is a high-density, ATS-optimized piece for senior software developers and/or engineers.
+* **Single-file implementation:** It is entirely built in LaTeX, in one document, eliminating the hustle of juggling the complex branching logic of various files.
+* **Context-driven persona:** This is a dense resume for senior professionals, meaning the resume is context-based and focuses on defining a persona rather than looking at individual, isolated categories (how traditionally we would look at skills, education, experience, etc.).
+* **Redefining the Skills category:** The document implements various advanced categories, like publications, and the "Professional Credentials & Modern Stack Exposure"—I thought of this category to work as a display for professional certifications and as a keyword matching tool, completely replacing the traditional skills section that usually looks like a marginal category, a boring list of skills.
+* **Dual optimization:** Moreover, I tried to make the document optimal and clean-looking from both the code and the rendering perspective (design-wise).
+* **Machine readability:** The generated PDF is machine-readable and should read nicely on various viewers; it introduces a standardized dictionary into the binary file to force a 1:1 character match.
+* **Typography and aesthetics:** It uses a well-known design with strict typography implementations and warm colors. I personally always loved the disruptive elements found in the Awesome-Resume, but give that is it one file and has a custom LaTeX code for alignment, it is easier to edit, operate with, and has simplicity by design.
