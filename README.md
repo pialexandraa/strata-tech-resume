@@ -2,12 +2,22 @@
 
 Given that modern recruiting relies heavily on Applicant Tracking Systems to parse, index, and categorize candidates data, this resume is a high-density, highly searchable piece made for senior software developers and/or engineers.
 
-{screenshots}
+I named this template Strata (the Latin plural of stratum, meaning "layers"). I believe a professional identity is not a static list; it is a narrative built from stacked experiences—education, projects, professional history, and personal initiatives. Most resume templates are category-intensive, forcing expertise into rigid, predefined boxes. Strata is built as a flexible foundation, allowing the story of your expertise to define the structure, not the other way around.
 
+<p align="center">
+  <img src="General_view1.jpg" width="500" alt="Resume Page 1 Preview">
+</p>
+<p align="center">
+  <img src="General_view2.jpg" width="500" alt="Resume Page 2 Preview">
+</p>
 
 * **Single-file implementation:** It is entirely built in LaTeX, in one document, eliminating the hustle of juggling the complex branching logic of various files.
 * **Context-driven persona:** This is a dense resume for senior professionals, meaning the resume is context-based and focuses on defining a persona rather than looking at individual, isolated categories (how traditionally we would look at skills, education, experience, etc.).
 * **Redefining the Skills category:** The document implements various advanced categories, like publications, and the "Professional Credentials & Modern Stack Exposure"—I thought of this category to work as a display for professional certifications and as a **visual** keyword matching space. This is meant to completely replace the traditional skills section that usually looks like a marginal category, a boring list of items either separated by a comma or listed with bullet points.
+
+<p align="center">
+  <img src="Keywords.jpg" width="700" alt="Resume Category">
+</p>
 
 *Mini-disclaimer: ATS-screening tools normally do 2 specific tasks when reading and categorizing a resume:*
 
