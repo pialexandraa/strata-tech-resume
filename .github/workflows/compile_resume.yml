@@ -1,0 +1,51 @@
+# Automated Resume Preview
+
+name: Build and Update Resume Preview
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+# Step 1: compile the LaTeX file to a PDF
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+
+# Step 2: convert PDF to a PNG image for preview
+      - name: Convert to PNG
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils
+          # converting the first page (-f 1 -l 1) at 150 DPI resolution
+          pdftoppm -png -r 150 -f 1 -l 1 main.pdf preview
+
+# Step 3: commit & push the generated preview back to the repository
+      - name: Commit and Transfer Preview
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          
+          mkdir -p assets
+          mv preview-1.png assets/resume-preview.png
+
+          git add assets/resume-preview.png
+
+          if git diff --staged --quiet; then
+            echo "No changes to the preview image."
+          else
+            git commit -m "chore: automated update of resume preview [skip ci]"
+            git push
+          fi
