@@ -11,7 +11,7 @@ I named this template Strata (the Latin plural of stratum, meaning "layers"). I 
 
 [![Latest resume preview](https://github.com/pialexandraa/strata-tech-resume/actions/workflows/compile_resume.yml/badge.svg)](https://github.com/pialexandraa/strata-tech-resume/actions/workflows/compile_resume.yml)
  
-> 🎀 I also added an automated preview for the resume - it is a GitHub Actions CI/CD pipeline that compiles the LaTeX source and generates fresh PNG previews on every push; it sits in the "assets" dir for now, since I am using the statically-generated images.
+> 🎀 I also added an automated preview for the resume - it is a GitHub Actions CI/CD pipeline that compiles the LaTeX source and generates fresh PNG previews on every push; it sits in the "assets" dir for now, since I am using the statically-generated images instead.
 
 ## Characteristics
 
