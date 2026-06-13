@@ -33,3 +33,28 @@ I named this template Strata (the Latin plural of stratum, meaning "layers"). I 
 * **Dual optimization:** Moreover, I tried to make the document optimal and clean-looking from both the code and the rendering perspective (design-wise).
 * **Machine readability:** The generated PDF is machine-readable and should read nicely on various viewers; it introduces a standardized dictionary into the binary file to force a 1:1 character match.
 * **Typography and aesthetics:** It uses a well-known design with strict typography implementations and warm colors. I personally always loved the disruptive elements found in the Awesome-Resume, but give that is it one file and has a custom LaTeX code for alignment, it is easier to edit, operate with, and has simplicity by design.
+
+## Compile / Build resume
+
+### Option 1: locally
+
+I personally prefer and use Unix-based systems for simplicity and a lower system footprint. However, I will list here the tools to locally compile the LaTeX resume file depending on your operating system.
+
+Installing the distribution:
+* Ubuntu/Debian: `sudo apt install texlive-latex-base`
+* macOS: `brew install --cask basictex`
+* Windows: `Install MiKTeX`
+
+Compiling the resume:
+Simply navigate to the repository folder where you downloaded the resume file and run:
+`pdflatex main.tex`
+
+_As a resume, besides the pdf file, you might get some additional files like main.log, main.aux, or main.out. Most importantly for checking compilation errors and/or warning, would naturally be the main.log file. Check for explicit issues. The ones I am currently seeing are minor font retrieval ones which are quite standard for the current compilation._
+
+### Option 2: in the browser
+
+For a visual representation and zero local installations/setups, I suggest you use Overleaf. It is free and simple, and helps you easily compile your resume, as you do the changes.
+
+1. Create a free account at [Overleaf.com](https://www.overleaf.com/project).
+2. Create a New Project and select Upload Project. Alternatively, you can just copy/paste the whole code from main.tex in a new tex file.
+3. Upload the files from this repository. Overleaf will automatically detect the LaTeX source and provide an instantaneous PDF preview. If you just downloaded the files from the repository, remember to delete the screenshot and additional files that are not useful for the actual resume (which should be only one document).
